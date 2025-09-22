@@ -1,6 +1,6 @@
 # Dexterine
 
-`Dexterine` is a utility PHP package that provides templates based on [alpine.js](https://alpinejs.dev/) for handling frontend CRUD.
+`Dexterine` is a PHP utility package that provides templates based on [alpine.js](https://alpinejs.dev/) for handling frontend CRUD.
 
 ## Installation
 
@@ -12,7 +12,7 @@ $ composer require rougin/dexterine
 
 ## Basic usage
 
-Use the `Depot` class to create JavaScript-based CRUD methods:
+Use the `Depot` class to create CRUD methods based on JavaScript:
 
 ``` php
 // src/Pages/Items.php
@@ -48,13 +48,14 @@ class Items
 }
 ```
 
-`Pagee` from the `Gable` package may be required if there's a need to load paginated data.
+> [!NOTE]
+> `Pagee` from the `Gable` package may be required if there's a need to load paginated data.
 
 ## Methods
 
 ### withInit
 
-Creates an `init` JavaScript method. This method initializes any defined `Select` elements using the `TomSelect` JavaScript library. After initialization, it calls the `load` method, typically with the initial page number to fetch data:
+Creates an `init` method. This method initializes any defined `Select` elements using [tom-select](https://tom-select.js.org/). After initialization, it calls the `load` method with the initial page number to fetch data:
 
 ``` html
 // app/plates/items/depot.php
@@ -69,7 +70,7 @@ Creates an `init` JavaScript method. This method initializes any defined `Select
 
 ### withLoad
 
-Creates the `load` JavaScript method. This method fetches paginated data from a specified API endpoint using an `Axios` GET request. It takes a `Pagee` object from the `Gable` package, constructs a query string with pagination parameters, and sends the request. Upon receiving a response, it updates the component's `items` data property with the fetched data and the `pagee` data property with pagination details (limit, pages, total). It also manages the `loading` state during the request and sets the `loadError` state on failure:
+Creates the `load` method. This method fetches paginated data from a `GET` request. Upon receiving a response, it updates the component's `items` data property with the fetched data and the `pagee` data property with pagination details (limit, pages, total):
 
 ``` html
 // app/plates/items/depot.php
@@ -82,9 +83,6 @@ Creates the `load` JavaScript method. This method fetches paginated data from a 
   ->setLink($url->set('/v1/items')) ?>
 </script>
 ```
-
-> [!NOTE]
-> This requires a `Pagee` class from the `Gable` package for pagination.
 
 ### withStore
 
@@ -102,11 +100,12 @@ Creates a `store` method. This is used for sending a `POST` request to the speci
   ->addField('detail')
   ->setAlert('Item created!', 'Item successfully created.')
   ->setLink($url->set('/v1/items')) ?>
+</script>
 ```
 
 ### withEdit
 
-Creates an `edit` JavaScript method. This method is used to populate a modal with the data of a selected item. It takes an `item` object as a parameter and assigns its properties to the corresponding fields in the modal. It can also show or hide other modals:
+Creates an `edit` method. This method is used to populate a modal with the data of a selected item. It takes an `item` object as a parameter and assigns its properties to the corresponding fields in the modal. It can also show or hide other modals:
 
 ``` html
 // app/plates/items/depot.php
@@ -125,7 +124,7 @@ Creates an `edit` JavaScript method. This method is used to populate a modal wit
 
 ### withUpdate
 
-Creates an `update` JavaScript method. This method is used for sending a `PUT` request to the specified link to update an existing item. It collects data from the defined fields, includes the item's ID in the request, and shows an alert upon successful update before reloading the data:
+Creates an `update` method. This method is used for sending a `PUT` request to the specified link to update an existing item. It collects data from the defined fields, includes the item's ID in the request, and shows an alert upon successful update before reloading the data:
 
 ``` html
 // app/plates/items/depot.php
@@ -144,7 +143,7 @@ Creates an `update` JavaScript method. This method is used for sending a `PUT` r
 
 ### withTrash
 
-Creates a `trash` JavaScript method. This method is used to populate a modal for confirming the deletion of an item. It takes an `item` object as a parameter and assigns its properties to the corresponding fields in the modal. It can also show or hide other modals:
+Creates a `trash` method. This method is used to populate a modal for confirming the deletion of an item. It takes an `item` object as a parameter and assigns its properties to the corresponding fields in the modal. It can also show or hide other modals:
 
 ``` html
 // app/plates/items/depot.php
@@ -162,7 +161,7 @@ Creates a `trash` JavaScript method. This method is used to populate a modal for
 
 ### withRemove
 
-Creates a `remove` JavaScript method. This method is used for sending a `DELETE` request to the specified link to remove an item. It takes the item's ID as a parameter, includes it in the request, and shows an alert upon successful deletion before reloading the data:
+Creates a `remove` method. This method is used for sending a `DELETE` request to the specified link to remove an item. It takes the item's ID as a parameter, includes it in the request, and shows an alert upon successful deletion before reloading the data:
 
 ``` html
 // app/plates/items/depot.php
@@ -181,7 +180,7 @@ Creates a `remove` JavaScript method. This method is used for sending a `DELETE`
 
 ### withClose
 
-Creates a `close` JavaScript method. This method is used to close modals and reset the values of specified fields. It can also hide other modals and reset fields based on a provided script:
+Creates a `close` method. This method is used to close modals and reset the values of specified fields. It can also hide other modals and reset fields based on a provided script:
 
 ``` html
 // app/plates/items/depot.php
