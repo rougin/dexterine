@@ -1,18 +1,18 @@
 <?php
 
-namespace Rougin\Dexterine;
+namespace Rougin\Dextra;
 
 use Rougin\Gable\Pagee;
 
 /**
- * @package Dexterine
+ * @package Dextra
  *
  * @author Rougin Gutib <rougingutib@gmail.com>
  */
 class Depot
 {
     /**
-     * @var \Rougin\Dexterine\Method[]
+     * @var \Rougin\Dextra\Method[]
      */
     protected $fns = array();
 
@@ -35,7 +35,7 @@ class Depot
     }
 
     /**
-     * @return \Rougin\Dexterine\Close
+     * @return \Rougin\Dextra\Close
      */
     public function withClose()
     {
@@ -43,7 +43,7 @@ class Depot
     }
 
     /**
-     * @return \Rougin\Dexterine\Edit
+     * @return \Rougin\Dextra\Edit
      */
     public function withEdit()
     {
@@ -53,7 +53,7 @@ class Depot
     /**
      * @param integer $page
      *
-     * @return \Rougin\Dexterine\Init
+     * @return \Rougin\Dextra\Init
      */
     public function withInit($page = 1)
     {
@@ -63,7 +63,7 @@ class Depot
     /**
      * @param \Rougin\Gable\Pagee $pagee
      *
-     * @return \Rougin\Dexterine\Load
+     * @return \Rougin\Dextra\Load
      */
     public function withLoad(Pagee $pagee)
     {
@@ -73,18 +73,18 @@ class Depot
     /**
      * @param string $name
      *
-     * @return \Rougin\Dexterine\Modal
+     * @return \Rougin\Dextra\Modal
      */
     public function withModal($name)
     {
         $modal = new Modal($this->name);
 
-        /** @var \Rougin\Dexterine\Modal */
+        /** @var \Rougin\Dextra\Modal */
         return $modal->setName($name);
     }
 
     /**
-     * @return \Rougin\Dexterine\Remove
+     * @return \Rougin\Dextra\Remove
      */
     public function withRemove()
     {
@@ -92,7 +92,7 @@ class Depot
     }
 
     /**
-     * @return \Rougin\Dexterine\Store
+     * @return \Rougin\Dextra\Store
      */
     public function withStore()
     {
@@ -100,7 +100,7 @@ class Depot
     }
 
     /**
-     * @return \Rougin\Dexterine\Trash
+     * @return \Rougin\Dextra\Trash
      */
     public function withTrash()
     {
@@ -108,7 +108,7 @@ class Depot
     }
 
     /**
-     * @return \Rougin\Dexterine\Update
+     * @return \Rougin\Dextra\Update
      */
     public function withUpdate()
     {

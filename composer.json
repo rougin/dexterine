@@ -1,7 +1,7 @@
 {
-  "name": "rougin/dexterine",
+  "name": "rougin/dextra",
   "description": "\"Ready-to-eat\" CRUD for frontend.",
-  "homepage": "https://github.com/rougin/dexterine",
+  "homepage": "https://github.com/rougin/dextra",
   "license": "MIT",
   "authors":
   [
@@ -17,27 +17,29 @@
   },
   "require-dev":
   {
-    "phpunit/phpunit": "~4.2|~5.7|~6.0|~7.0|~8.0|~9.0",
+    "phpunit/phpunit": "*",
     "rougin/fortem": "dev-master",
     "rougin/gable": "dev-master",
-    "sanmai/phpunit-legacy-adapter": "~6.1|~8.0"
+    "sanmai/phpunit-legacy-adapter": "*"
   },
   "autoload":
   {
     "psr-4":
     {
-      "Rougin\\Dexterine\\": "src"
+      "Rougin\\Dextra\\": "src"
     }
   },
   "autoload-dev":
   {
     "psr-4":
     {
-      "Rougin\\Dexterine\\": "tests"
+      "Rougin\\Dextra\\": "tests"
     }
   },
   "scripts":
   {
+    "analyze": "phpstan analyse",
+    "restyle": "php-cs-fixer fix --config=phpstyle.php",
     "test": "phpunit"
   }
 }

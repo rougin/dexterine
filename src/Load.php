@@ -1,11 +1,11 @@
 <?php
 
-namespace Rougin\Dexterine;
+namespace Rougin\Dextra;
 
 use Rougin\Gable\Pagee;
 
 /**
- * @package Dexterine
+ * @package Dextra
  *
  * @author Rougin Gutib <rougingutib@gmail.com>
  */

@@ -1,11 +1,11 @@
 <?php
 
-namespace Rougin\Dexterine;
+namespace Rougin\Dextra;
 
 /**
  * TODO: This is a specific code for "tom-select".
  *
- * @package Dexterine
+ * @package Dextra
  *
  * @author Rougin Gutib <rougingutib@gmail.com>
  */

@@ -1,13 +1,13 @@
-# Dexterine
+# Dextra
 
-`Dexterine` is a PHP utility package that provides templates based on [alpine.js](https://alpinejs.dev/) for handling frontend CRUD.
+`Dextra` is a PHP utility package that provides templates based on [alpine.js](https://alpinejs.dev/) for handling frontend CRUD.
 
 ## Installation
 
 Install the package using [Composer](https://getcomposer.org/):
 
 ``` bash
-$ composer require rougin/dexterine
+$ composer require rougin/dextra
 ```
 
 ## Basic usage
@@ -20,7 +20,7 @@ Use the `Depot` class to create CRUD methods based on JavaScript:
 // ...
 
 use Psr\Http\Message\ServerRequestInterface;
-use Rougin\Dexterine\Depot;
+use Rougin\Dextra\Depot;
 use Rougin\Gable\Pagee;
 
 class Items

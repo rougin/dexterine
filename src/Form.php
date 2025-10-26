@@ -1,9 +1,9 @@
 <?php
 
-namespace Rougin\Dexterine;
+namespace Rougin\Dextra;
 
 /**
- * @package Dexterine
+ * @package Dextra
  *
  * @author Rougin Gutib <rougingutib@gmail.com>
  */

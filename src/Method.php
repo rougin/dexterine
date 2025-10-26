@@ -1,11 +1,11 @@
 <?php
 
-namespace Rougin\Dexterine;
+namespace Rougin\Dextra;
 
 use JShrink\Minifier;
 
 /**
- * @package Dexterine
+ * @package Dextra
  *
  * @author Rougin Gutib <rougingutib@gmail.com>
  */
@@ -17,7 +17,7 @@ class Method
     protected $arrays = array();
 
     /**
-     * @var \Rougin\Dexterine\Field[]
+     * @var \Rougin\Dextra\Field[]
      */
     protected $fields = array();
 
@@ -27,7 +27,7 @@ class Method
     protected $modals = array();
 
     /**
-     * @var \Rougin\Dexterine\Select[]
+     * @var \Rougin\Dextra\Select[]
      */
     protected $selects = array();
 
